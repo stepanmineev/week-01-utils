@@ -15,12 +15,22 @@ def ask_required(question):
     return answer
 
 
+def ask_number(question):
+    while True:
+        answer = ask_required(question)
+
+        try:
+            return int(answer)
+        except ValueError:
+            print("Ошибка: нужно ввести число.")
+
+
 # === 1. Расчет цены ===
 
 def calculate_price():
-    hours = int(ask_required("Сколько часов займет задача? "))
-    rate = int(ask_required("Сколько рублей стоит 1 час работы? "))
-    discount = int(ask_required("Скидка для первого клиента в процентах? "))
+    hours = ask_number("Сколько часов займет задача? ")
+    rate = ask_number("Сколько рублей стоит 1 час работы? ")
+    discount = ask_number("Скидка для первого клиента в процентах? ")
 
     total = hours * rate
     discount_amount = int(total * discount / 100)

@@ -14,7 +14,8 @@
 - изменить заявку;
 - удалить заявку;
 - сохранить бриф в `brief.txt`;
-- проверить GitHub-профиль через API.
+- проверить GitHub-профиль через API;
+- безопасно спрашивать числа в калькуляторе цены.
 
 ## Главный файл
 
@@ -117,5 +118,6 @@ C:\Users\stepa\AppData\Local\Programs\Python\Python312\python.exe app.py
 - запросы к API через `requests`;
 - JSON;
 - проверка пустых полей;
+- безопасный ввод чисел через `try/except`;
 - базовая CRUD-логика;
 - Git: `status`, `diff`, `add`, `commit`, `log`.
