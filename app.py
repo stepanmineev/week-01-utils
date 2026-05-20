@@ -166,6 +166,12 @@ def delete_lead():
         return
 
     search_text = ask_required("Введите имя или часть имени клиента для удаления: ").lower()
+    confirm = ask_required("Точно удалить найденные заявки? Напишите да или нет: ").lower()
+
+    if confirm != "да":
+        print("Удаление отменено.")
+        return
+
     remaining_rows = []
     deleted_count = 0
 
