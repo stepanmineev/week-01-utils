@@ -61,6 +61,12 @@ python app.py
 cd "C:\Users\stepa\Desktop\изучени курс\projects\week-01-utils"
 ```
 
+Установи зависимости:
+
+```powershell
+python -m pip install -r requirements.txt
+```
+
 Запусти:
 
 ```powershell
