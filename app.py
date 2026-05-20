@@ -233,7 +233,7 @@ def update_lead():
 
 while True:
     print()
-    print("=== MINI CRM ===")
+    print("=== MINI CRM ДЛЯ ЗАЯВОК ===")
     print("1. Собрать бриф клиента")
     print("2. Посчитать цену услуги")
     print("3. Сохранить заявку в CSV")
