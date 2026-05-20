@@ -1,5 +1,6 @@
 import csv
 import os
+import requests
 
 
 # === Общие функции ===
@@ -229,6 +230,32 @@ def update_lead():
     print("Изменено заявок:", updated_count)
 
 
+# === 8. Проверка GitHub профиля ===
+
+def check_github_profile():
+    username = ask_required("Введите GitHub username: ")
+    url = "https://api.github.com/users/" + username
+    response = requests.get(url)
+
+    if response.status_code == 404:
+        print("Пользователь не найден.")
+        return
+
+    if response.status_code != 200:
+        print("Ошибка запроса. Код:", response.status_code)
+        return
+
+    data = response.json()
+
+    print()
+    print("=== GITHUB PROFILE ===")
+    print("Логин:", data["login"])
+    print("Имя:", data["name"])
+    print("Публичные репозитории:", data["public_repos"])
+    print("Подписчики:", data["followers"])
+    print("Ссылка:", data["html_url"])
+
+
 # === Главное меню ===
 
 while True:
@@ -241,6 +268,7 @@ while True:
     print("5. Найти заявку по имени")
     print("6. Удалить заявку по имени")
     print("7. Изменить заявку по имени")
+    print("8. Проверить GitHub профиль")
     print("0. Выйти из программы")
 
     choice = input("Выбери действие: ")
@@ -259,8 +287,10 @@ while True:
         delete_lead()
     elif choice == "7":
         update_lead()
+    elif choice == "8":
+        check_github_profile()
     elif choice == "0":
         print("Готово. Работа завершена.")
         break
     else:
-        print("Ошибка: выбери пункт от 0 до 7.")
+        print("Ошибка: выбери пункт от 0 до 8.")

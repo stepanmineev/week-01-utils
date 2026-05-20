@@ -13,7 +13,8 @@
 - найти заявку по имени;
 - изменить заявку;
 - удалить заявку;
-- сохранить бриф в `brief.txt`.
+- сохранить бриф в `brief.txt`;
+- проверить GitHub-профиль через API.
 
 ## Главный файл
 
@@ -36,6 +37,7 @@ python app.py
 5. Найти заявку по имени
 6. Удалить заявку по имени
 7. Изменить заявку по имени
+8. Проверить GitHub профиль
 0. Выйти из программы
 ```
 
@@ -49,6 +51,7 @@ python app.py
 - `brief_generator.py` - генератор брифа.
 - `leads_saver.py` - сохранение заявки в CSV.
 - `leads_reader.py` - чтение заявок из CSV.
+- `api_client.py` - первый запрос к внешнему API через `requests`.
 
 ## Как Запустить На Windows
 
@@ -105,6 +108,8 @@ C:\Users\stepa\AppData\Local\Programs\Python\Python312\python.exe app.py
 - циклы `while` и `for`;
 - работа с файлами;
 - CSV;
+- запросы к API через `requests`;
+- JSON;
 - проверка пустых полей;
 - базовая CRUD-логика;
 - Git: `status`, `diff`, `add`, `commit`, `log`.
